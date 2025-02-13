@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Adult-Tutors</title>
+    <link rel="stylesheet" href="Adult-Tutors.css">
+    <script> 
+        function redirectToBooking(tutorName, rate) {
+    window.location.href = `booking.html?tutor=${encodeURIComponent(tutorName)}&rate=${rate}`;
+}
+    </script>
+</head>
+<body> 
+    <header>
+        <div class="container">
+            <img src="HHS_Fleur_De_Lis.png" alt="logo" class="logo" width="100" height="100">
+            <nav>
+                <ul> 
+                    <li><a href="Homepage.html">Home</a></li> 
+                    <li><a href="FindTutors.html">Find Tutors</a></li> 
+                    <li><a href="Location.html">Location</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Meet Our Tutors</h1>
+        <div class="tutor-container">
+            <div class="tutor-card">
+                <img src="Tutor 5.5.jpg" alt="Tutor 1">
+                <h2>Léa Taty <span class="rating">⭐ 4.1</span></h2>
+                <p><i class="fas fa-flag"></i> France | English, French</p>
+                <p><i class="fas fa-dollar-sign"></i> 12 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 2 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Weekdays</p>
+                <p><i class="fas fa-users"></i> 8 students taught</p>
+                <p><i class="fas fa-child"></i> Online / In-Person</p>
+                <button class="start-learning" onclick="redirectToBooking('Léa Taty', 12)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="Tutor 7.jpg" alt="Tutor 2">
+                <h2> Thomas Koffi <span class="rating">⭐ 4.5</span></h2>
+                <p><i class="fas fa-flag"></i> Ivory Coast |French, English</p>
+                <p><i class="fas fa-dollar-sign"></i> 22 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 5 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Weekends</p>
+                <p><i class="fas fa-users"></i> 20 students taught</p>
+                <p><i class="fas fa-child"></i> Online/ <In-Person></In-Person></p>
+                <button class="start-learning" onclick="redirectToBooking('Thomas Koffi', 22)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="Tutor 6.jpg" alt="Tutor 3">
+                <h2> Melodie Sauvé <span class="rating">⭐ 4.3</span></h2>
+                <p><i class="fas fa-flag"></i> Canada | English, French</p>
+                <p><i class="fas fa-dollar-sign"></i> 25 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 6 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Evenings</p>
+                <p><i class="fas fa-users"></i> 18 students taught</p>
+                <p><i class="fas fa-child"></i> In-Person </p>
+                <button class="start-learning" onclick="redirectToBooking('Melodie Sauvé', 25)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="tutor 8.jpg" alt="Tutor 4">
+                <h2> Justin Hauchard <span class="rating">⭐ 5.0</span></h2>
+                <p><i class="fas fa-flag"></i>  Switzerland | French, English</p>
+                <p><i class="fas fa-dollar-sign"></i> 35 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 10 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Flexible</p>
+                <p><i class="fas fa-users"></i> 30 students taught</p>
+                <p><i class="fas fa-child"></i> Online </p>
+                <button class="start-learning" onclick="redirectToBooking('Justing Hauchard', 35)">Start Learning</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+       

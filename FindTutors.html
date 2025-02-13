@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Find Tutors</title>
+    <link rel="stylesheet" href="Find-Tutors.css">
+    <script>
+        function showForm(type) {
+            // Hide both forms first
+            document.getElementById("child-form").style.display = "none";
+            document.getElementById("adult-form").style.display = "none";
+    
+            // Show the selected form
+            if (type === "child") {
+                document.getElementById("child-form").style.display = "block";
+            } else if (type === "adult") {
+                document.getElementById("adult-form").style.display = "block";
+            }
+        }
+
+        function updateBudgetValue(value, type) {
+    if (type === "child") {
+        document.getElementById("child-budget-value").innerText = `$${value}`;
+    } else {
+        document.getElementById("adult-budget-value").innerText = `$${value}`;
+    }
+}
+
+    </script>
+</head>
+<body> 
+    <header>
+        <div class="container">
+            <img src="HHS_Fleur_De_Lis.png" alt="logo" class="logo" width="100" height="100">
+            <nav>
+                <ul> 
+                    <li><a href="Homepage.html">Home</a></li> 
+                    <li><a href="FindTutors.html">Find Tutors</a></li> 
+                    <li><a href="Location.html">Location</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="Title">
+            <div class="center">Who is Learning?</div>
+            <div class="button-container">
+                <button onclick="showForm('child')">Child</button>
+                <button onclick="showForm('adult')">Adult</button>
+            </div>
+        </div>
+
+        <div id="child-form" class="form-container">
+            <h2>Child Learning Registration</h2>
+            <form action="Children-Tutors.html" method = "GET">
+                <label for="child-name">Child's Name:</label>
+                <input type="text" id="child-name" name="child-name" required>
+                
+                <label for="parent-name">Parent's Name:</label>
+                <input type="text" id="parent-name" name="parent-name" required>
+    
+                <label for="age">Child's Age:</label>
+                <input type="number" id="child-age" name="age" required>
+
+                <label for ="grade"> Grade Level: </label>
+                <select id="grade" name="grade">
+                    <option value="Pre-K">Pre-K</option>
+                    <option value="Kindergarden">Kindergarden</option>
+                    <option value="Grade 1">Grade 1</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Grade 3">Grade 3</option>
+                    <option value="Grade 4">Grade 4</option>
+                    <option value="Grade 5">Grade 5</option>
+                    <option value="Grade 6">Grade 6</option>
+                    <option value="Grade 7">Grade 7</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                </select>
+
+
+                <label for ="french-level"> French Level: </label>
+                <select id="child-french-level" name="french-level">
+                    <option value="A1">A1: Beginner Level</option>
+                    <option value="A2"> A2: Elementary Level</option>
+                    <option value="B1">B1: Intermediate Level</option>
+                    <option value="B2">B2: Upper-Intermediate Level</option>
+                    <option value="C1">C1: Advanced Level</option>
+                    <option value="C2">C2: Master Level </option>
+                </select>
+
+                <label for="learning goals"> Learning Goals: </label>
+                <input type="text" id="child-learning-goals" name="learning goals" required>
+
+                <label for="accent"> Preferred Accent or Culture </label>
+                <input type="text" id="accent" name="accent" optional>
+
+        
+                <label for="learning-mode">Preferred Learning Mode:</label>
+                <select id="child-learning-mode" name="learning-mode">
+                <option value="online">Online</option>
+                <option value="in-person">In-Person</option>
+            </select>
+
+            <div id="child-availability-section">
+                <h3>Availability</h3>
+                <p>Select the days you are available and specify the time:</p>
+            
+                <!-- Monday -->
+                <label>
+                    <input type="checkbox" id="monday" name="availability" value="Monday"> Monday
+                </label>
+                <input type="time" id="monday-start" name="monday-start">
+                <input type="time" id="monday-end" name="monday-end">
+            
+                <br>
+            
+                <!-- Tuesday -->
+                <label>
+                    <input type="checkbox" id="tuesday" name="availability" value="Tuesday"> Tuesday
+                </label>
+                <input type="time" id="tuesday-start" name="tuesday-start">
+                <input type="time" id="tuesday-end" name="tuesday-end">
+            
+                <br>
+            
+                <!-- Wednesday -->
+                <label>
+                    <input type="checkbox" id="wednesday" name="availability" value="Wednesday"> Wednesday
+                </label>
+                <input type="time" id="wednesday-start" name="wednesday-start">
+                <input type="time" id="wednesday-end" name="wednesday-end">
+            
+                <br>
+            
+                <!-- Thursday -->
+                <label>
+                    <input type="checkbox" id="thursday" name="availability" value="Thursday"> Thursday
+                </label>
+                <input type="time" id="thursday-start" name="thursday-start">
+                <input type="time" id="thursday-end" name="thursday-end">
+            
+                <br>
+            
+                <!-- Friday -->
+                <label>
+                    <input type="checkbox" id="friday" name="availability" value="Friday"> Friday
+                </label>
+                <input type="time" id="friday-start" name="friday-start">
+                <input type="time" id="friday-end" name="friday-end">
+            
+                <br>
+            
+                <!-- Saturday -->
+                <label>
+                    <input type="checkbox" id="saturday" name="availability" value="Saturday"> Saturday
+                </label>
+                <input type="time" id="saturday-start" name="saturday-start">
+                <input type="time" id="saturday-end" name="saturday-end">
+            
+                <br>
+            
+                <!-- Sunday -->
+                <label>
+                    <input type="checkbox" id="sunday" name="availability" value="Sunday"> Sunday
+                </label>
+                <input type="time" id="sunday-start" name="sunday-start">
+                <input type="time" id="sunday-end" name="sunday-end">
+            </div>
+
+            <div id="child-budget-section">
+                <h3>Budget</h3>
+                <label for="budget">Select your budget range ($/h):</label>
+                <input type="range" id="child-budget" name="budget" min="10" max="100" step="5" value="50" 
+    oninput="updateBudgetValue(this.value, 'child')">
+<span id="child-budget-value">$50</span>
+            </div>
+    
+           
+                <button type="submit">Find Tutors</button>
+            </form>
+        </div>
+
+         
+    <div id="adult-form" class="form-container">
+        <h2>Adult Learning Registration</h2>
+        <form action="Adult-Tutors.html" method = "GET">
+            <label for="adult-name">Full Name:</label>
+            <input type="text" id="adult-name" name="adult-name" required>
+
+            <label for="age"> Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for ="french-level"> French Level: </label>
+                <select id="french-level" name="french-level">
+                    <option value="A1">A1: Beginner Level</option>
+                    <option value="A2"> A2: Elementary Level</option>
+                    <option value="B1">B1: Intermediate Level</option>
+                    <option value="B2">B2: Upper-Intermediate Level</option>
+                    <option value="C1">C1: Advanced Level</option>
+                    <option value="C2">C2: Master Level </option>
+                </select>
+                <label for="learning goals"> Learning Goals: </label>
+                <input type="text" id="learning goals" name="learning goals" required>
+
+                <label for="accent"> Preferred Accent or Culture </label>
+                <input type="text" id="accent" name="accent" optional>
+
+        
+                <label for="learning-mode">Preferred Learning Mode:</label>
+                <select id="learning-mode" name="learning-mode">
+                <option value="online">Online</option>
+                <option value="in-person">In-Person</option>
+            </select>
+
+            <div id="availability-section">
+                <h3>Availability</h3>
+                <p>Select the days you are available and specify the time:</p>
+            
+                <!-- Monday -->
+                <label>
+                    <input type="checkbox" id="monday" name="availability" value="Monday"> Monday
+                </label>
+                <input type="time" id="monday-start" name="monday-start">
+                <input type="time" id="monday-end" name="monday-end">
+            
+                <br>
+            
+                <!-- Tuesday -->
+                <label>
+                    <input type="checkbox" id="tuesday" name="availability" value="Tuesday"> Tuesday
+                </label>
+                <input type="time" id="tuesday-start" name="tuesday-start">
+                <input type="time" id="tuesday-end" name="tuesday-end">
+            
+                <br>
+            
+                <!-- Wednesday -->
+                <label>
+                    <input type="checkbox" id="wednesday" name="availability" value="Wednesday"> Wednesday
+                </label>
+                <input type="time" id="wednesday-start" name="wednesday-start">
+                <input type="time" id="wednesday-end" name="wednesday-end">
+            
+                <br>
+            
+                <!-- Thursday -->
+                <label>
+                    <input type="checkbox" id="thursday" name="availability" value="Thursday"> Thursday
+                </label>
+                <input type="time" id="thursday-start" name="thursday-start">
+                <input type="time" id="thursday-end" name="thursday-end">
+            
+                <br>
+            
+                <!-- Friday -->
+                <label>
+                    <input type="checkbox" id="friday" name="availability" value="Friday"> Friday
+                </label>
+                <input type="time" id="friday-start" name="friday-start">
+                <input type="time" id="friday-end" name="friday-end">
+            
+                <br>
+            
+                <!-- Saturday -->
+                <label>
+                    <input type="checkbox" id="saturday" name="availability" value="Saturday"> Saturday
+                </label>
+                <input type="time" id="saturday-start" name="saturday-start">
+                <input type="time" id="saturday-end" name="saturday-end">
+            
+                <br>
+            
+                <!-- Sunday -->
+                <label>
+                    <input type="checkbox" id="sunday" name="availability" value="Sunday"> Sunday
+                </label>
+                <input type="time" id="sunday-start" name="sunday-start">
+                <input type="time" id="sunday-end" name="sunday-end">
+            </div>
+
+            <div id="budget-section">
+                <h3>Budget</h3>
+                <label for="budget">Select your budget range ($/h):</label>
+                <input type="range" id="adult-budget" name="budget" min="10" max="100" step="5" value="50" 
+                oninput="updateBudgetValue(this.value, 'adult')">
+                <span id="adult-budget-value">$50</span>
+            </div>
+        
+
+            <button type="submit">Find Tutors</button>
+        </form>
+    </div>
+
+
+    </main>
+</body>
+</html>
+       

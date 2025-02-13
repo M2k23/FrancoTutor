@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="booking.css">
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tutor = urlParams.get("tutor");
+            const rate = parseFloat(urlParams.get("rate"));
+
+            document.getElementById("tutor-name").textContent = tutor;
+            document.getElementById("tutor-rate").textContent = `$${rate} per lesson`;
+
+            document.getElementById("num-lessons").addEventListener("change", function() {
+                let numLessons = parseInt(this.value);
+                document.getElementById("total-price").textContent = `$${(numLessons * rate).toFixed(2)}`;
+            });
+
+            document.getElementById("confirm-booking").addEventListener("click", function() {
+                const firstName = document.getElementById("first-name").value;
+                const lastName = document.getElementById("last-name").value;
+                const email = document.getElementById("email").value;
+                const numLessons = document.getElementById("num-lessons").value;
+                const date = document.getElementById("lesson-date").value;
+                const time = document.getElementById("lesson-time").value;
+                const totalPrice = document.getElementById("total-price").textContent;
+
+                if (!firstName || !lastName || !email || !date || !time) {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+                const bookingNumber = Math.floor(100000 + Math.random() * 900000);
+                localStorage.setItem("bookingConfirmation", JSON.stringify({
+                    firstName, lastName, email, tutor, numLessons, totalPrice, date, time, bookingNumber
+                }));
+
+                window.location.href = "confirmation.html";
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="HHS_Fleur_De_Lis.png" alt="logo" class="logo" width="100" height="100">
+            <nav>
+                <ul> 
+                    <li><a href="Homepage.html">Home</a></li> 
+                    <li><a href="FindTutors.html">Find Tutors</a></li> 
+                    <li><a href="Location.html">Location</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="tutor-card">
+        <h2>Book Your Lesson</h2>
+        <h3 id="tutor-name"></h3>
+        <p>Rate: <span id="tutor-rate"></span></p>
+
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="num-lessons">Number of Lessons:</label>
+        <select id="num-lessons">
+            <option value="1">1 Lesson</option>
+            <option value="5">5 Lessons</option>
+            <option value="10">10 Lessons</option>
+            <option value="20">20 Lessons</option>
+        </select>
+
+        <p>Total Price: <span id="total-price">$0.00</span></p>
+
+        <label for="lesson-date">Choose Date:</label>
+        <input type="date" id="lesson-date" required>
+
+        <label for="lesson-time">Choose Time:</label>
+        <input type="time" id="lesson-time" required>
+
+        <button id="confirm-booking">Confirm Booking</button>
+    </div>
+</body>
+</html>

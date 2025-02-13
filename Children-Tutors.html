@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Children-Tutors</title>
+    <link rel="stylesheet" href="Children-Tutors.css">
+    <script> 
+        function redirectToBooking(tutorName, rate) {
+    window.location.href = `booking.html?tutor=${encodeURIComponent(tutorName)}&rate=${rate}`;
+}
+    </script>
+</head>
+<body> 
+    <header>
+        <div class="container">
+            <img src="HHS_Fleur_De_Lis.png" alt="logo" class="logo" width="100" height="100">
+            <nav>
+                <ul> 
+                    <li><a href="Homepage.html">Home</a></li> 
+                    <li><a href="FindTutors.html">Find Tutors</a></li> 
+                    <li><a href="Location.html">Location</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Meet Our Tutors</h1>
+        <div class="tutor-container">
+            <div class="tutor-card">
+                <img src="Tutor 1.5.jpg" alt="Tutor 1">
+                <h2>Emily Leblanc <span class="rating">⭐ 4.8</span></h2>
+                <p><i class="fas fa-flag"></i> Canada | English, French</p>
+                <p><i class="fas fa-dollar-sign"></i> 15 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 5 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Weekdays</p>
+                <p><i class="fas fa-users"></i> 15 students taught</p>
+                <p><i class="fas fa-child"></i> Online / In-Person</p>
+                <button class="start-learning" onclick="redirectToBooking('Emily Leblanc', 15)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="Tutor 2.jpg" alt="Tutor 2">
+                <h2> Olivier Boucher <span class="rating">⭐ 4.9</span></h2>
+                <p><i class="fas fa-flag"></i> France |French, English</p>
+                <p><i class="fas fa-dollar-sign"></i> 25 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 7 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Weekends</p>
+                <p><i class="fas fa-users"></i> 20 students taught</p>
+                <p><i class="fas fa-child"></i> Online</p>
+                <button class="start-learning" onclick="redirectToBooking('Olivier Boucher', 25)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="tutor 3.jpg" alt="Tutor 3">
+                <h2>Sarah Martens <span class="rating">⭐ 4.7</span></h2>
+                <p><i class="fas fa-flag"></i> Belgium | English, French</p>
+                <p><i class="fas fa-dollar-sign"></i> 22 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 6 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Evenings</p>
+                <p><i class="fas fa-users"></i> 18 students taught</p>
+                <p><i class="fas fa-child"></i>  In-Person </p>
+                <button class="start-learning" onclick="redirectToBooking('Sarah Martens', 22)">Start Learning</button>
+            </div>
+
+            <div class="tutor-card">
+                <img src="tutor 4.jpg" alt="Tutor 4">
+                <h2>David Coté <span class="rating">⭐ 5.0</span></h2>
+                <p><i class="fas fa-flag"></i>  Canada | French, English</p>
+                <p><i class="fas fa-dollar-sign"></i> 35 / hour</p>
+                <p><i class="fas fa-briefcase"></i> 10 years experience</p>
+                <p><i class="fas fa-calendar"></i> Available: Flexible</p>
+                <p><i class="fas fa-users"></i> 25 students taught</p>
+                <p><i class="fas fa-child"></i> Online/ In Person</p>
+                <button class="start-learning" onclick="redirectToBooking('David Coté', 35)">Start Learning</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+       

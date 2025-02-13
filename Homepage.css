@@ -1,0 +1,98 @@
+
+
+header {
+    background: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container{
+    
+    margin:0 auto;
+}
+
+.logo{float: left;}
+
+nav{
+    float: right;
+    justify-content: bottom;
+}
+
+nav ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    
+}
+
+nav li{
+    padding-top: 35px;
+}
+
+nav ul li:last-child {
+    padding-right: 100px; }
+
+nav a {
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: gray;
+}
+
+body{
+    background-image:url(https://i.pinimg.com/736x/17/79/be/1779be7cacb9d5f4bc8a233aaabe1775.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /* Keeps the image centered */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margins */
+ }
+
+ .Title {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-size: 50px; /* Ensure visibility */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Center it vertically */
+}
+.center {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 120px;
+}
+
+
+button {
+    background-color: rgb(20, 20, 169);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Change color on hover */
+button:hover {
+    background-color: rgb(10, 10, 120);
+}
